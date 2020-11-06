@@ -29,7 +29,8 @@ module.exports = {
     if (typeOfPet === 'dog') return pets.dogs.show();
   },
 
-  dequeue(type) {
-    pets[`${type}s`].dequeue();
+  dequeue(typeOfPet) {
+    if (typeOfPet === 'cat') pets.cats.dequeue();
+    if (typeOfPet === 'dog') pets.dogs.dequeue();
   },
 };
