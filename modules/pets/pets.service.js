@@ -17,7 +17,7 @@ store.dogs.forEach((dog) => pets.dogs.enqueue(dog));
 
 module.exports = {
   get() {
-    const objOfArrays = [];
+    const objOfArrays = {};
     objOfArrays.cats = pets.cats.all();
     objOfArrays.dogs = pets.dogs.all();
 

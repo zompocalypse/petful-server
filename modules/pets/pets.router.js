@@ -5,23 +5,22 @@ const Pets = require('./pets.service');
 const People = require('../people/people.service');
 
 const router = express.Router();
+const jsonBodyParser = express.json();
 
 router.get('/', (req, res) => {
   res.json(Pets.get());
 });
 
-router.get('/:type', (req, res) => {
-  res.json(Pets.getByType(req.params.type));
-});
+router
+  .route('/:type')
+  .get((req, res) => {
+    res.json(Pets.getByType(req.params.type));
+  })
+  .delete((req, res) => {
+    Pets.dequeue(req.params.type);
+    People.dequeue();
 
-router.delete('/', json, (req, res) => {
-  const { type } = req.body;
-  const typeOfPet = type;
-
-  Pets.dequeue(typeOfPet);
-  People.dequeue();
-
-  res.set(204).end();
-});
+    res.set(204).end();
+  });
 
 module.exports = router;
