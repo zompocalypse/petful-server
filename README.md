@@ -1,13 +1,22 @@
-# Petful Server
+# FIFO Petful Adoptions
+
 FIFO Petful Adoptions is a First In First Out pet adoption service! That means every pet finds a home and both you and the pet don't have to wait long to be matched.
 
 Neat! How do I adopt?
 
 It's simple... Start by clicking the button below to go to the adoption page. Add you name to the list, wait your turn, then click to adopt a cat or a dog!
 
+## Repo Details
+
+- Client - https://github.com/zompocalypse/petful-client/tree/master
+- Server - https://github.com/zompocalypse/petful-server
+
 ## How to use the API
+
 ### /api/cat - GET
+
 returns the cat located at the top of the cat queue
+
 ```
 {
     "age": 2,
@@ -19,8 +28,11 @@ returns the cat located at the top of the cat queue
     "story": "Thrown on the street"
 }
 ```
+
 ### /api/dog - GET
+
 returns the dog located at the top of the dog queue
+
 ```
 {
     "age": 3,
@@ -32,8 +44,11 @@ returns the dog located at the top of the dog queue
     "story": "Owner Passed away"
 }
 ```
+
 ### /api/pets - GET
+
 returns all pets from both the dog and cat queues
+
 ```
 {
     "cats": [
@@ -62,14 +77,19 @@ returns all pets from both the dog and cat queues
     ]
 }
 ```
+
 ### /api/pets/:type - DELETE
+
 removes the top dog/cat AND top person from the respective queues
+
 ```
 :type should be 'cat' or 'dog'
 ```
 
 ### /api/people - GET
+
 returns all queue currently in queue
+
 ```
 [
     "Randy Lahey",
@@ -79,6 +99,7 @@ returns all queue currently in queue
 ```
 
 ## Tech Stack
-* Client - React
-* Server - Express
-* Database - no database currently
+
+- Client - React
+- Server - Express
+- Database - no database currently
