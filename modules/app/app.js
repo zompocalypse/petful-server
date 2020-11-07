@@ -13,5 +13,7 @@ app.use(
 
 app.use('/api/people', require('../people/people.router'));
 app.use('/api/pets', require('../pets/pets.router'));
+app.use('/api/cat', require('../cats/cats.router'));
+app.use('/api/dog', require('../dogs/dogs.router'));
 
 module.exports = app;
